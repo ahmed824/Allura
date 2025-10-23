@@ -116,9 +116,11 @@ function renderCategories() {
   categoriesWrap.innerHTML = "";
   categories.forEach((cat, idx) => {
     const div = document.createElement("div");
-    div.className = `cursor-pointer text-[32px] transition-all duration-300 hover:scale-105 w-fit text-[#202020] m-auto  md:ml-auto ${
-      currentIndex === idx ? "cat-active opacity-100" : "opacity-50"
-    }`;
+    div.className = `cursor-pointer text-[22px] sm:text-[26px] md:text-[32px] 
+transition-all duration-300 hover:scale-105 w-fit text-[#202020] 
+mx-auto md:ml-auto 
+${currentIndex === idx ? "cat-active opacity-100" : "opacity-50"}`;
+
     div.innerHTML = `<div class="pb-3"><span class=" font-bold text-right block transition-all duration-300">${cat}</span></div>`;
     div.addEventListener("click", () => {
       currentIndex = idx;
