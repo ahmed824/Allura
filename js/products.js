@@ -93,7 +93,7 @@ let currentIndex = 0;
 
 // helper to map position -> tailwind classes (absolute)
 function getFeaturePosition(position) {
-  const isSmallScreen = window.innerWidth < 768; // Tailwind breakpoint: md
+  const isSmallScreen = window.innerWidth < 769; // Tailwind breakpoint: md
 
   const positions = {
     "top-left": isSmallScreen ? "top-24 -right-4" : "top-40 -right-28",
