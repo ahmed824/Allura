@@ -96,16 +96,16 @@ function getFeaturePosition(position) {
   const isSmallScreen = window.innerWidth < 768; // Tailwind breakpoint: md
 
   const positions = {
-    "top-left": isSmallScreen ? "top-24 -right-12" : "top-40 -right-28",
-    "top-right": isSmallScreen ? "top-8 -left-12" : "top-8 -left-28",
+    "top-left": isSmallScreen ? "top-24 -right-4" : "top-40 -right-28",
+    "top-right": isSmallScreen ? "top-8 -left-4" : "top-8 -left-28",
     "middle-left": isSmallScreen
-      ? "top-1/2 -translate-y-1/2 -right-12"
+      ? "top-1/2 -translate-y-1/2 -right-4"
       : "top-1/2 -translate-y-1/2 -right-28",
     "middle-right": isSmallScreen
-      ? "top-1/2 -translate-y-1/2 -left-12"
-      : "top-1/2 -translate-y-1/2 -left-28",
-    "bottom-left": isSmallScreen ? "bottom-8 -right-12" : "bottom-8 -right-28",
-    "bottom-right": isSmallScreen ? "bottom-20 -left-12" : "bottom-24 -left-28",
+      ? "top-1/2 -translate-y-1/2 -left-4"
+      : "top-1/2 -translate-y-1/2 -left-8",
+    "bottom-left": isSmallScreen ? "bottom-8 -right-4" : "bottom-8 -right-28",
+    "bottom-right": isSmallScreen ? "bottom-20 -left-4" : "bottom-24 -left-28",
   };
 
   return positions[position] || "top-8 right-0";
