@@ -270,7 +270,7 @@
 
                 <!-- Fixed Decorative Elements -->
                 <img src="assets/images/ice-decoration.png" alt="slide decoration"
-                class="mobile-decoration lg:object-cover lg:absolute lg:top-0 lg:right-8 lg:z-20 lg:w-[200px] lg:h-[220px]" />
+                    class="mobile-decoration lg:object-cover lg:absolute lg:top-0 lg:right-8 lg:z-20 lg:w-[200px] lg:h-[220px]" />
                 <!-- class="object-cover absolute top-0 right-0 z-20" width="234" height="20" /> -->
 
 
@@ -1144,66 +1144,75 @@
 
     <!-- Combined Newsletter & Footer Section -->
     <footer class="bg-[#F6F6F6] py-12 relative overflow-hidden">
+        <!-- Animated Bubbles -->
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
 
+        <!-- Background Water Drops -->
         <img src="assets/images/footer-bg-left.png" alt="bg-decoration"
-            class="absolute top-0 left-0 h-[400px] w-auto pointer-events-none" loading="eager" decoding="async"
-            width="200" height="400" />
+            class="water-drop-left absolute top-0 left-0 h-[300px] sm:h-[400px] w-auto pointer-events-none opacity-60"
+            loading="eager" decoding="async" width="200" height="400" />
         <img src="assets/images/footer-bg-right.png" alt="bg-decoration"
-            class="absolute bottom-0 right-0 h-[400px] w-auto pointer-events-none" loading="eager" decoding="async"
-            width="200" height="400" />
+            class="water-drop-right absolute bottom-0 right-0 h-[300px] sm:h-[400px] w-auto pointer-events-none opacity-60"
+            loading="eager" decoding="async" width="200" height="400" />
 
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Newsletter Subscription -->
-            <div class="flex gap-8 flex-col md:flex-row items-center justify-between  mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-center md:text-right" style="color: var(--dark);">
+            <div class="flex gap-6 lg:gap-8 flex-col lg:flex-row items-center justify-between mb-12">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center lg:text-right"
+                    style="color: var(--dark);">
                     الاشتراك في النشرة البريدية
                 </h2>
 
                 <div class="max-w-2xl w-full flex flex-col sm:flex-row gap-3 items-center justify-center">
                     <div class="relative flex items-center w-full">
                         <input type="email" placeholder="أدخل بريدك الالكتروني"
-                            class="w-full px-6 py-3 rounded-[2px] bg-white placeholder:text-[#C8C8C8] focus:border-[#202020] focus:outline-none" />
+                            class="newsletter-input w-full px-6 py-3 rounded-[2px] bg-white placeholder:text-[#C8C8C8] focus:border-[#202020] focus:outline-none" />
                         <div
-                            class="absolute left-4 bg-[#202020] rounded-full p-2 cursor-pointer flex items-center justify-center hover:scale-110 transition-transform">
+                            class="send-btn absolute left-4 bg-[#202020] rounded-full p-2 cursor-pointer flex items-center justify-center hover:scale-110 transition-transform">
                             <img src="assets/images/send-icon.png" alt="send icon" class="w-[14px] h-[14px]" />
                         </div>
                     </div>
                 </div>
 
-                <div class="flex  w-full md:w-fit flex-col sm:flex-row items-center justify-center gap-4">
+                <div class="flex w-full lg:w-fit flex-col sm:flex-row items-center justify-center gap-4">
                     <a href="tel:+009612345678932" aria-label="اتصل بنا 009612345678932"
-                        class="flex items-center  w-full md:w-fit gap-3 p-2 md:p-4 border border-gray-200 bg-[#9F9F9F08] shadow-sm rounded-md hover:bg-white transition-colors">
+                        class="flex items-center w-full md:w-fit gap-3 p-3 md:p-4 border border-gray-200 bg-[#9F9F9F08] shadow-sm rounded-md hover:bg-white transition-all hover:shadow-md"
+                        data-aos="fade-up">
                         <div class="w-10 h-10 rounded-full bg-[#202020] flex items-center justify-center">
-                            <img src="assets/images/mobile-icon.png" alt="اتصل" class="w-[24px] h-[24px] object-contain"
-                                loading="eager" decoding="async" />
+                            <img src="assets/images/mobile-icon.png" alt="اتصل"
+                                class="w-[24px] h-[24px] object-contain" />
                         </div>
                         <div class="text-right">
-                            <div class="text-lg text-[#202020]">اتصل بنا</div>
-                            <div class="font-regular text-[#202020E5]">009612345678932</div>
+                            <div class="text-base md:text-lg text-[#202020]">اتصل بنا</div>
+                            <div class="font-regular text-sm md:text-base text-[#202020E5]">009612345678932</div>
                         </div>
                     </a>
 
                     <a href="mailto:Allura@gmail.com" aria-label="راسلنا Allura@gmail.com"
-                        class="flex items-center gap-3  w-full md:w-fit p-2 md:p-4 border border-gray-200 bg-[#9F9F9F08] shadow-sm rounded-md hover:bg-white transition-colors">
+                        class="flex items-center gap-3 w-full md:w-fit p-3 md:p-4 border border-gray-200 bg-[#9F9F9F08] shadow-sm rounded-md hover:bg-white transition-all hover:shadow-md"
+                        data-aos="fade-up">
                         <div class="w-10 h-10 rounded-full bg-[#202020] flex items-center justify-center">
                             <img src="assets/images/envelope-icon.png" alt="راسلنا"
-                                class="w-[32px] h-[32px] object-contain" loading="eager" decoding="async" />
+                                class="w-[32px] h-[32px] object-contain" />
                         </div>
                         <div class="text-right">
-                            <div class="text-lg text-[#202020]">راسلنا</div>
-                            <div class="font-regular text-[#202020E5]">Allura@gmail.com</div>
+                            <div class="text-base md:text-lg text-[#202020]">راسلنا</div>
+                            <div class="font-regular text-sm md:text-base text-[#202020E5]">Allura@gmail.com</div>
                         </div>
                     </a>
                 </div>
             </div>
 
-            <hr class="border-[#00000030]-200 mb-8">
+            <hr class="border-[#00000030] mb-8">
 
             <!-- Footer Content Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 relative">
 
                 <!-- Brand & Description -->
-                <div class="text-center lg:text-right ">
+                <div class="text-center lg:text-right lg:border-l border-gray-300">
                     <div class="flex items-center justify-center lg:justify-start gap-3 mb-6">
                         <img src="assets/images/logo.svg" alt="Allura" width="90" height="55"
                             class="w-full h-full max-w-[90px]" />
@@ -1247,7 +1256,7 @@
                 </div>
 
                 <!-- Account Section -->
-                <div class="text-center lg:text-right lg:border-l border-gray-300 lg:pr-8">
+                <div class="text-center lg:text-right lg:border-l border-gray-300 ">
                     <h3 class="text-xl font-bold mb-6" style="color: var(--dark);">حسابي</h3>
                     <ul class="space-y-3 text-lg" style="color: #222222E5;">
                         <li><a href="#" class="hover:text-[#597445] transition-colors">حسابي</a></li>
@@ -1258,7 +1267,7 @@
                 </div>
 
                 <!-- Important Links -->
-                <div class="text-center lg:text-right lg:border-l border-gray-300 lg:pr-8">
+                <div class="text-center lg:text-right lg:border-l border-gray-300 ">
                     <h3 class="text-xl font-bold mb-6" style="color: var(--dark);">روابط مهمة</h3>
                     <ul class="space-y-3 text-lg" style="color: #222222E5;">
                         <li><a href="#" class="hover:text-[#597445] transition-colors">من نحن</a></li>
@@ -1269,7 +1278,7 @@
                 </div>
 
                 <!-- Contact Us -->
-                <div class="text-center lg:text-right lg:border-l border-gray-300 lg:pr-8">
+                <div class="text-center lg:text-right lg:border-l border-gray-300 ">
                     <h3 class="text-xl font-bold mb-6" style="color: var(--dark);">تواصل معنا</h3>
                     <ul class="space-y-4" style="color: #222222E5;">
                         <li class="flex items-start gap-3 justify-center lg:justify-start">
@@ -1292,28 +1301,27 @@
                 </div>
 
                 <!-- Image Column -->
-                <div class="flex flex-col gap-2 justify-center items-center lg:border-l border-gray-300 lg:pr-8">
+                <div class="flex flex-col gap-2 justify-center items-center ">
                     <img src="assets/images/sbc.png" alt="Footer decorative image" class="w-40 h-auto  " />
                     <p class="text-[24px] text-center">موثق لدى منصة <br> العملاء</p>
                 </div>
             </div>
 
-
-            <hr class="border-[#00000030]-200 mb-8">
+            <hr class="border-[#00000030] mb-8">
 
             <!-- Bottom Section -->
-            <div class="flex flex-col md:flex-row-reverse justify-between items-center gap-6 text-sm text-[#202020]">
-
+            <div
+                class="flex flex-col md:flex-row-reverse justify-between items-center gap-6 text-xs sm:text-sm text-[#202020]">
                 <!-- Payment Methods -->
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3 md:gap-4 flex-wrap justify-center payment-methods">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png" alt="PayPal"
-                        class="h-6">
+                        class="h-5 md:h-6">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"
-                        class="h-6">
+                        class="h-5 md:h-6">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"
-                        class="h-6">
+                        class="h-5 md:h-6">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay"
-                        class="h-6">
+                        class="h-5 md:h-6">
                 </div>
 
                 <!-- Copyright -->
@@ -1322,15 +1330,14 @@
                 </div>
 
                 <!-- ID Number -->
-                <div class="flex items-center gap-2">
-                    <img src="assets/images/tax-number.png" alt="Tax number" class="h-[30px] w-auto">
-                    <span>الرقم الضريبي : 546987552</span>
+                <div class="flex items-center gap-2 flex-wrap justify-center">
+                    <img src="assets/images/tax-number.png" alt="Tax number" class="h-[25px] md:h-[30px] w-auto">
+                    <span class="text-xs md:text-sm">الرقم الضريبي : 546987552</span>
                 </div>
-
             </div>
-
         </div>
     </footer>
+
 
     <!-- Scroll to Top Button -->
     <button id="scrollTop"

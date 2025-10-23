@@ -340,3 +340,71 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// GSAP Animations on Scroll
+gsap.registerPlugin();
+
+// Animate footer sections on load
+gsap.from(".footer-section", {
+  opacity: 0,
+  y: 30,
+  duration: 0.8,
+  stagger: 0.2,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top 80%",
+  },
+});
+
+// Animate payment methods
+gsap.from(".payment-methods img", {
+  opacity: 0,
+  y: 20,
+  duration: 0.5,
+  stagger: 0.1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".payment-methods",
+    start: "top 90%",
+  },
+});
+
+// Social media icons hover effect with GSAP
+document.querySelectorAll(".social-link").forEach((link) => {
+  link.addEventListener("mouseenter", function () {
+    gsap.to(this, {
+      scale: 1.2,
+      rotation: 360,
+      duration: 0.4,
+      ease: "back.out(1.7)",
+    });
+  });
+
+  link.addEventListener("mouseleave", function () {
+    gsap.to(this, {
+      scale: 1,
+      rotation: 0,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  });
+});
+
+// Newsletter input focus animation
+const newsletterInput = document.querySelector(".newsletter-input");
+newsletterInput.addEventListener("focus", function () {
+  gsap.to(this, {
+    scale: 1.02,
+    duration: 0.3,
+    ease: "power2.out",
+  });
+});
+
+newsletterInput.addEventListener("blur", function () {
+  gsap.to(this, {
+    scale: 1,
+    duration: 0.3,
+    ease: "power2.out",
+  });
+});
