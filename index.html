@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allura - العناية الجمالية التي تستحقها بشرتك</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <!-- style css -->
+    <link rel="stylesheet" href="style/main.css" />
+    
+</head>
+
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-container">
+            <!-- Animated circles -->
+            <div class="circle-container">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+                <div class="percentage" id="percentage">0%</div>
+            </div>
+
+            <!-- Floating particles -->
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+
+            <!-- Logo -->
+            <div class="logo-wrapper">
+                <img src="assets/images/logo.svg" alt="Allura" />
+            </div>
+
+            <!-- Loading text -->
+            <div class="loading-text">جاري التحميل...</div>
+
+            <!-- Progress bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm">
+        <!-- Main Navbar -->
+        <div class="  mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 gap-6 md:gap-16">
+                <!-- Logo -->
+                <a href="/index.html" class="flex items-center">
+                    <img src="assets/images/logo.svg" alt="Allura" width="90" height="55" class="w-full h-full" />
+                </a>
+
+                <!-- Search Input -->
+                <div class="flex-1">
+                    <div class="relative">
+                        <i class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </i>
+                        <input type="text" placeholder="ما الذي تبحث عنه؟" class="w-full pr-10 py-2 text-sm border border-[#E7E7E7] rounded-[2px] text-right 
+                            placeholder:text-[#B5B5B5] bg-white
+                            focus:outline-none focus:ring-1 focus:ring-[#597445] focus:border-[#597445]
+                            disabled:cursor-not-allowed disabled:opacity-50" />
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button & Cart -->
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <button class="relative hover:bg-transparent">
+                        <img src="assets/images/cart-icon.svg" alt="cart" width="24" height="24" />
+                        <span
+                            class="absolute -top-2 -right-2 bg-[#252525] text-white text-xs rounded-full h-[8px] p-2 w-[8px] flex items-center justify-center">
+                            1
+                        </span>
+                    </button>
+
+
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden border-t bg-white hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <button
+                        class="block w-full text-right px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">جميع
+                        الأقسام</button>
+                    <button
+                        class="block w-full text-right px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">المكياج</button>
+                    <button
+                        class="block w-full text-right px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">العناية</button>
+                    <button
+                        class="block w-full text-right px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">العطور</button>
+                    <button
+                        class="block w-full text-right px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">تخفيضات</button>
+                    <button
+                        class="block w-full text-right px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md">الماركات</button>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-[#0000001A] mb-4">
+        <!-- Bottom Bar -->
+        <div class="text-black border-b">
+            <div class="pb-2 mx-auto px-2 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-10 text-sm">
+                    <!-- Navigation Links -->
+                    <div class="flex items-center gap-2">
+                        <button class="" onclick="toggleMobileMenu()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>
+                        </button>
+                        <div
+                            class="hidden lg:flex items-center space-x-2 md:space-x-4 space-x-reverse divide-x divide-gray-300 divide-x-reverse space-x-reverse text-sm md:text-[14px]">
+                            <a href="#"
+                                class="text-[#202020] border-none hover:text-primary transition-colors flex items-center space-x-1 space-x-reverse">
+                                <span>جميع الأقسام</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-[#202020] pr-4 hover:text-primary transition-colors">المكياج</a>
+                            <a href="#" class="text-[#202020] pr-4 hover:text-primary transition-colors">العناية</a>
+                            <a href="#" class="text-[#202020] pr-4 hover:text-primary transition-colors">العطور</a>
+                            <a href="#" class="text-[#202020] pr-4 hover:text-primary transition-colors">تخفيضات</a>
+                            <a href="#" class="text-[#202020] pr-4 hover:text-primary transition-colors">الماركات</a>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 md:space-x-4 space-x-reverse divide-x divide-gray-300 divide-x-reverse space-x-reverse text-sm md:text-[14px]">
+                        <a href="#" class="pr-4 flex items-center gap-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg"
+                                alt="Saudi Arabia Flag"
+                                class="w-[20px] h-[20px] object-cover rounded-full border border-gray-300">
+                            العربية - رس
+                        </a>
+
+                        <a href="#" class="pr-4">سياسة الإستبدال أو الاسترجاع</a>
+                        <a href="#" class="pr-4">تواصل معنا</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+
+
+    <!-- Hero Section -->
+    <section class="relative h-[600px] lg:h-[700px] overflow-hidden">
+        <div class="h-full grid grid-cols-1 lg:grid-cols-3">
+            <!-- Left Fixed Image -->
+            <div class="hidden lg:block relative">
+                <div class="w-full h-full relative overflow-hidden">
+                    <div
+                        class="hero-gradient absolute inset-0 bg-gradient-to-r from-[color:var(--color-primary)/20] to-transparent z-10">
+                    </div>
+                    <img src="assets/images/right-img.png" alt="منتج العناية بالبشرة"
+                        class="object-cover w-full h-full" />
+                </div>
+            </div>
+
+            <!-- Middle Swiper -->
+            <div class="relative overflow-hidden w-full">
+                <!-- Fixed Decorative Elements -->
+                <img src="assets/images/ice-decoration.png" alt="slide decoration"
+                    class="object-cover absolute top-0 right-0 z-20" width="234" height="284" />
+                <img src="assets/images/logo.svg" alt="Allura logo"
+                    class="absolute top-4 left-1/2 -translate-x-1/2 z-20 w-[110px]">
+
+                <div class="hero-swiper h-full">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="h-full w-full bg-[#E7F0DC] relative">
+                                <div class="relative z-10 h-full flex items-center justify-center">
+                                    <div class="text-center space-y-6">
+                                        <h1
+                                            class="text-2xl  sm:text-3xl lg:text-[34px] xl:text-[40px] font-bold text-[#3E582B] leading-relaxed">
+                                            العنايـــــــة التي تستحقهـــــا بشرتــــــــــــــــــــــــك
+                                        </h1>
+                                        <p class="text-base sm:text-lg lg:text-xl xl:text-2xl text-[#222222]">
+                                            منتجات طبيعية 100% لتغذية بشرتك
+                                        </p>
+                                        <div class="flex justify-center">
+                                            <button class="relative px-6 sm:px-8 py-2 sm:py-3 bg-[#3E582B] text-[#F6F6F6] font-medium text-lg 
+                                                border-none transition-all duration-150 ease-in
+                                                hover:translate-x-[4px] hover:translate-y-[4px]
+                                                after:content-[''] after:flex after:items-center after:justify-center 
+                                                after:absolute after:top-0 after:left-0 
+                                                after:h-[102%] after:w-[102%]
+                                                after:px-6 sm:after:px-8 after:py-2 sm:after:py-3
+                                                after:translate-x-[4px] after:translate-y-[4px]
+                                                after:border-2 after:border-[#3E582B] after:bg-transparent after:text-[#F6F6F6]
+                                                after:transition-all after:duration-150 after:ease-in
+                                                hover:after:-translate-x-[4px] hover:after:-translate-y-[4px]
+                                                active:after:bg-[#3E582B]">
+                                                <span class="flex items-center gap-2 relative z-10">
+                                                    اكتشف المزيد
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                        class="w-5 h-5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="h-full w-full bg-[#E7F0DC] relative">
+                                <div class="relative z-10 h-full flex items-center justify-center">
+                                    <div class="text-center space-y-6">
+                                        <h1
+                                            class="text-2xl sm:text-3xl lg:text-[34px] xl:text-[40px] font-bold text-[#3E582B]">
+                                            جمال طبيعي من الطبيعة
+                                        </h1>
+                                        <p class="text-base sm:text-lg lg:text-xl xl:text-2xl text-[#222222]">
+                                            منتجات عضوية مضمونة الجودة
+                                        </p>
+                                        <div class="flex justify-center">
+                                            <button class="relative px-6 sm:px-8 py-2 sm:py-3 bg-[#3E582B] text-[#F6F6F6] font-medium text-lg 
+                                                border-none transition-all duration-150 ease-in
+                                                hover:translate-x-[4px] hover:translate-y-[4px]
+                                                after:content-[''] after:flex after:items-center after:justify-center 
+                                                after:absolute after:top-0 after:left-0 
+                                                after:h-[102%] after:w-[102%]
+                                                after:px-6 sm:after:px-8 after:py-2 sm:after:py-3
+                                                after:translate-x-[4px] after:translate-y-[4px]
+                                                after:border-2 after:border-[#3E582B] after:bg-transparent after:text-[#F6F6F6]
+                                                after:transition-all after:duration-150 after:ease-in
+                                                hover:after:-translate-x-[4px] hover:after:-translate-y-[4px]
+                                                active:after:bg-[#3E582B]">
+                                                <span class="flex items-center gap-2 relative z-10">
+                                                    تسوق الآن
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                        class="w-5 h-5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="h-full w-full bg-[#E7F0DC] relative">
+                                <div class="relative z-10 h-full flex items-center justify-center">
+                                    <div class="text-center space-y-6">
+                                        <h1
+                                            class="text-2xl sm:text-3xl lg:text-[34px] xl:text-[40px] font-bold text-[#3E582B]">
+                                            عناية متكاملة لبشرتك
+                                        </h1>
+                                        <p class="text-base sm:text-lg lg:text-xl xl:text-2xl text-[#222222]">
+                                            مجموعة شاملة من منتجات العناية
+                                        </p>
+                                        <div class="flex justify-center">
+                                            <button class="relative px-6 sm:px-8 py-2 sm:py-3 bg-[#3E582B] text-[#F6F6F6] font-medium text-lg 
+                                                border-none transition-all duration-150 ease-in
+                                                hover:translate-x-[4px] hover:translate-y-[4px]
+                                                after:content-[''] after:flex after:items-center after:justify-center 
+                                                after:absolute after:top-0 after:left-0 
+                                                after:h-[102%] after:w-[102%]
+                                                after:px-6 sm:after:px-8 after:py-2 sm:after:py-3
+                                                after:translate-x-[4px] after:translate-y-[4px]
+                                                after:border-2 after:border-[#3E582B] after:bg-transparent after:text-[#F6F6F6]
+                                                after:transition-all after:duration-150 after:ease-in
+                                                hover:after:-translate-x-[4px] hover:after:-translate-y-[4px]
+                                                active:after:bg-[#3E582B]">
+                                                <span class="flex items-center gap-2 relative z-10">
+                                                    استكشف المجموعة
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                        class="w-5 h-5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                                    </svg>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="hero-pagination swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- Right Fixed Image -->
+            <div class="hidden lg:block relative">
+                <div class="w-full h-full relative overflow-hidden">
+                    <div
+                        class="hero-gradient absolute inset-0 bg-gradient-to-l from-transparent to-[color:var(--color-primary)/20] z-10">
+                    </div>
+                    <img src="assets/images/left-img.png" alt="منتج العناية الطبيعية"
+                        class="object-cover w-full h-full" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Brand Partners -->
+    <section class="bg-[#3E582B] py-8 border-t border-b border-gray-200">
+        <div class="container mx-auto px-4">
+            <div class="swiper brandSwiper">
+                <div class="swiper-wrapper items-center">
+                    <div class="swiper-slide">
+                        <div class="flex justify-center items-center">
+                            <img src="assets/images/brands/dior-logo.png" alt="Dior" class="w-auto h-[42px] brand-img">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex justify-center items-center">
+                            <img src="assets/images/brands/sephora-logo.png" alt="Sephora"
+                                class="w-auto h-[42px] brand-img">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex justify-center items-center">
+                            <img src="assets/images/brands/clinique-logo.png" alt="Clinique"
+                                class="w-auto h-[42px] brand-img">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex justify-center items-center">
+                            <img src="assets/images/brands/mac-logo.png" alt="MAC" class="w-auto h-[42px] brand-img">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex justify-center items-center">
+                            <img src="assets/images/brands/fenty-logo.png" alt="Fenty"
+                                class="w-auto h-[42px] brand-img">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex justify-center items-center">
+                            <img src="assets/images/brands/saje-logo.png" alt="Saje" class="w-auto h-[42px] brand-img">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex justify-center items-center">
+                            <img src="assets/images/brands/fenty-logo.png" alt="Fenty"
+                                class="w-auto h-[42px] brand-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+
+            <!-- Categories head -->
+            <div data-aos="fade-up" class="text-center my-16">
+                <p class="text-[#597445] text-base mb-3">التصنيفات</p>
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-black w-fit mx-auto mb-3 pb-4 border-[#597445] border-b-2">
+                    كل ما تحتاجه في مكان واحد
+                </h2>
+                <p class="text-[16px] text-[#202020CC]">
+                    من العناية بالشعر إلى مستحضرات البشرة والعطور
+                </p>
+            </div>
+
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Card 1: Perfumes -->
+                <article class="group cursor-pointer">
+                    <div class="relative pt-16">
+                        <!-- Image Container - Positioned above card -->
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-2">
+                            <img src="assets/images/categories/category-1.png" alt="العطور"
+                                class="w-full h-36 object-contain drop-shadow-lg">
+                        </div>
+                        <!-- Card Content -->
+                        <div
+                            class="bg-[#F6F6F6] pt-20 pb-6 px-2 text-center transition-shadow duration-300 group-hover:shadow-md">
+                            <h3 class="text-gray-800 font-semibold text-lg mb-2">العطور</h3>
+                            <p class="text-gray-500 text-sm">55 قطعة</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Makeup -->
+                <article class="group cursor-pointer">
+                    <div class="relative pt-16">
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-2">
+                            <img src="assets/images/categories/category-2.png" alt="المكياج"
+                                class="w-full h-36 object-contain drop-shadow-lg">
+                        </div>
+                        <div
+                            class="bg-[#F6F6F6] pt-20 pb-6 px-2 text-center transition-shadow duration-300 group-hover:shadow-md">
+                            <h3 class="text-gray-800 font-semibold text-lg mb-2">المكياج</h3>
+                            <p class="text-gray-500 text-sm">55 قطعة</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Hands & Feet -->
+                <article class="group cursor-pointer">
+                    <div class="relative pt-16">
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-2">
+                            <img src="assets/images/categories/category-3.png" alt="اليدين والقدمين"
+                                class="w-full h-36 object-contain drop-shadow-lg">
+                        </div>
+                        <div
+                            class="bg-[#F6F6F6] pt-20 pb-6 px-2 text-center transition-shadow duration-300 group-hover:shadow-md">
+                            <h3 class="text-gray-800 font-semibold text-lg mb-2">اليدين والقدمين</h3>
+                            <p class="text-gray-500 text-sm">55 قطعة</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4: Skin Care -->
+                <article class="group cursor-pointer">
+                    <div class="relative pt-16">
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-2">
+                            <img src="assets/images/categories/category-4.png" alt="العناية بالبشرة"
+                                class="w-full h-36 object-contain drop-shadow-lg">
+                        </div>
+                        <div
+                            class="bg-[#F6F6F6] pt-20 pb-6 px-2 text-center transition-shadow duration-300 group-hover:shadow-md">
+                            <h3 class="text-gray-800 font-semibold text-lg mb-2">العناية بالبشرة</h3>
+                            <p class="text-gray-500 text-sm">55 قطعة</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5: Hair Care -->
+                <article class="group cursor-pointer">
+                    <div class="relative pt-16">
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-2">
+                            <img src="assets/images/categories/category-5.png" alt="العناية بالشعر"
+                                class="w-full h-36 object-contain drop-shadow-lg">
+                        </div>
+                        <div
+                            class="bg-[#F6F6F6] pt-20 pb-6 px-2 text-center transition-shadow duration-300 group-hover:shadow-md">
+                            <h3 class="text-gray-800 font-semibold text-lg mb-2">العناية بالشعر</h3>
+                            <p class="text-gray-500 text-sm">55 قطعة</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6: Body Care -->
+                <article class="group cursor-pointer">
+                    <div class="relative pt-16">
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 transition-transform duration-300 group-hover:-translate-y-2">
+                            <img src="assets/images/categories/category-6.png" alt="العناية بالجسم"
+                                class="w-full h-36 object-contain drop-shadow-lg">
+                        </div>
+                        <div
+                            class="bg-[#F6F6F6] pt-20 pb-6 px-2 text-center transition-shadow duration-300 group-hover:shadow-md">
+                            <h3 class="text-gray-800 font-semibold text-lg mb-2">العناية بالجسم</h3>
+                            <p class="text-gray-500 text-sm">55 قطعة</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+
+            <!-- Best Sellers head -->
+            <div data-aos="fade-up" class="text-center my-16">
+                <p class="text-[#597445] text-base mb-3">الأكثر مبيعــــــــــــــــــا</p>
+                <h2
+                    class="text-3xl md:text-4xl font-bold text-black w-fit mx-auto mb-3 pb-4 border-[#597445] border-b-2">
+                    سر الجمال الذي يبحث عنه الجميع
+                </h2>
+                <p class="text-[16px] text-[#202020CC]">
+                    استكشف الخيارات الرائجة التي تعزز جمالك وتلبي احتياجاتك الشخصية
+                </p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white overflow-hidden" style="box-shadow: 0px 0px 7.89px 0px #0000000F;"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative">
+                        <span class="badge-sale absolute top-4 right-4 z-10"> 15%-</span>
+                        <img src="assets/images/product-1.png" alt="سيروم فيتامين سي"
+                            class="w-auto h-[150px] m-auto object-cover">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between min-h-[268px]">
+                        <div class="star-rating text-center mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#597445] text-center mb-1">العناية بالبشرة</p>
+                        <h3 class="font-Medium text-lg text-center mb-2">سيروم فيتامين سي الأصلي</h3>
+                        <div class="flex items-center gap-2 mb-4 justify-center">
+                            <span class="text-xl text-[#BD1C1C] font-medium">95 ر.س</span>
+                            <span class="text-[#1E251996] font-normal text-[14px] line-through">112 ر.س</span>
+                        </div>
+                        <button
+                            class="group relative whitespace-nowrap w-full bg-[#597445] hover:bg-[#4a6238] text-white font-semibold py-2 px-6 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ease-out overflow-hidden">
+                            <!-- Optimized animated shimmer effect -->
+                            <span
+                                class="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+
+                            <!-- Button content with improved hover state -->
+                            <span class="relative flex items-center justify-center gap-3">
+                                <span
+                                    class="text-lg transform transition-transform duration-300 group-hover:scale-105">أضف
+                                    للسلة</span>
+
+                                <!-- Shopping cart icon with smooth animation -->
+                                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-all duration-300 ease-in-out"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
+                                </svg>
+                            </span>
+
+                            <!-- Enhanced click effect -->
+                            <span
+                                class="absolute inset-0 rounded-lg opacity-0 group-active:opacity-100 bg-white/30 transition-all duration-300 ease-in-out"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white overflow-hidden" style="box-shadow: 0px 0px 7.89px 0px #0000000F;"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative">
+                        <span class="badge-sale absolute top-4 right-4 z-10"> 20%-</span>
+                        <img src="assets/images/product-1.png" alt="كريم الترطيب"
+                            class="w-auto h-[150px] m-auto object-cover">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between min-h-[268px]">
+                        <div class="star-rating text-center mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#597445] text-center mb-1">العناية بالبشرة</p>
+                        <h3 class="font-Medium text-lg text-center mb-2">كريم الترطيب اليومي</h3>
+                        <div class="flex items-center gap-2 mb-4 justify-center">
+                            <span class="text-xl text-[#BD1C1C] font-medium">120 ر.س</span>
+                            <span class="text-[#1E251996] font-normal text-[14px] line-through">150 ر.س</span>
+                        </div>
+                        <button
+                            class="group relative whitespace-nowrap w-full bg-[#597445] hover:bg-[#4a6238] text-white font-semibold py-2 px-6 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ease-out overflow-hidden">
+                            <!-- Optimized animated shimmer effect -->
+                            <span
+                                class="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+
+                            <!-- Button content with improved hover state -->
+                            <span class="relative flex items-center justify-center gap-3">
+                                <span
+                                    class="text-lg transform transition-transform duration-300 group-hover:scale-105">أضف
+                                    للسلة</span>
+
+                                <!-- Shopping cart icon with smooth animation -->
+                                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-all duration-300 ease-in-out"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
+                                </svg>
+                            </span>
+
+                            <!-- Enhanced click effect -->
+                            <span
+                                class="absolute inset-0 rounded-lg opacity-0 group-active:opacity-100 bg-white/30 transition-all duration-300 ease-in-out"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white overflow-hidden" style="box-shadow: 0px 0px 7.89px 0px #0000000F;"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative">
+                        <span class="badge-sale absolute top-4 right-4 z-10"> 10%-</span>
+                        <img src="assets/images/product-1.png" alt="غسول الوجه"
+                            class="w-auto h-[150px] m-auto object-cover">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between min-h-[268px]">
+                        <div class="star-rating text-center mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#597445] text-center mb-1">العناية بالبشرة</p>
+                        <h3 class="font-Medium text-lg text-center mb-2">غسول الوجه المنعش</h3>
+                        <div class="flex items-center gap-2 mb-4 justify-center">
+                            <span class="text-xl text-[#BD1C1C] font-medium">85 ر.س</span>
+                            <span class="text-[#1E251996] font-normal text-[14px] line-through">95 ر.س</span>
+                        </div>
+                        <button
+                            class="group relative whitespace-nowrap w-full bg-[#597445] hover:bg-[#4a6238] text-white font-semibold py-2 px-6 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ease-out overflow-hidden">
+                            <!-- Optimized animated shimmer effect -->
+                            <span
+                                class="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+
+                            <!-- Button content with improved hover state -->
+                            <span class="relative flex items-center justify-center gap-3">
+                                <span
+                                    class="text-lg transform transition-transform duration-300 group-hover:scale-105">أضف
+                                    للسلة</span>
+
+                                <!-- Shopping cart icon with smooth animation -->
+                                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-all duration-300 ease-in-out"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
+                                </svg>
+                            </span>
+
+                            <!-- Enhanced click effect -->
+                            <span
+                                class="absolute inset-0 rounded-lg opacity-0 group-active:opacity-100 bg-white/30 transition-all duration-300 ease-in-out"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white overflow-hidden" style="box-shadow: 0px 0px 7.89px 0px #0000000F;"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative">
+                        <span class="badge-sale absolute top-4 right-4 z-10"> 25%-</span>
+                        <img src="assets/images/product-1.png" alt="ماسك الطين"
+                            class="w-auto h-[150px] m-auto object-cover">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between min-h-[268px]">
+                        <div class="star-rating text-center mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#597445] text-center mb-1">العناية بالبشرة</p>
+                        <h3 class="font-Medium text-lg text-center mb-2">ماسك الطين الطبيعي</h3>
+                        <div class="flex items-center gap-2 mb-4 justify-center">
+                            <span class="text-xl text-[#BD1C1C] font-medium">75 ر.س</span>
+                            <span class="text-[#1E251996] font-normal text-[14px] line-through">100 ر.س</span>
+                        </div>
+                        <button
+                            class="group relative  whitespace-nowrap w-full bg-[#597445] hover:bg-[#4a6238] text-white font-semibold py-2 px-6 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ease-out overflow-hidden">
+                            <!-- Optimized animated shimmer effect -->
+                            <span
+                                class="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+
+                            <!-- Button content with improved hover state -->
+                            <span class="relative flex items-center justify-center gap-3">
+                                <span
+                                    class="text-lg transform transition-transform duration-300 group-hover:scale-105">أضف
+                                    للسلة</span>
+
+                                <!-- Shopping cart icon with smooth animation -->
+                                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-all duration-300 ease-in-out"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
+                                </svg>
+                            </span>
+
+                            <!-- Enhanced click effect -->
+                            <span
+                                class="absolute inset-0 rounded-lg opacity-0 group-active:opacity-100 bg-white/30 transition-all duration-300 ease-in-out"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card bg-white overflow-hidden" style="box-shadow: 0px 0px 7.89px 0px #0000000F;"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative">
+                        <span class="badge-sale absolute top-4 right-4 z-10"> 18%-</span>
+                        <img src="assets/images/product-1.png" alt="زيت الأرغان"
+                            class="w-auto h-[150px] m-auto object-cover">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between min-h-[268px]">
+                        <div class="star-rating text-center mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#597445] text-center mb-1">العناية بالشعر</p>
+                        <h3 class="font-Medium text-lg text-center mb-2">زيت الأرغان العضوي</h3>
+                        <div class="flex items-center gap-2 mb-4 justify-center">
+                            <span class="text-xl text-[#BD1C1C] font-medium">135 ر.س</span>
+                            <span class="text-[#1E251996] font-normal text-[14px] line-through">165 ر.س</span>
+                        </div>
+                        <button
+                            class="group relative whitespace-nowrap w-full bg-[#597445] hover:bg-[#4a6238] text-white font-semibold py-2 px-6 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ease-out overflow-hidden">
+                            <!-- Optimized animated shimmer effect -->
+                            <span
+                                class="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+
+                            <!-- Button content with improved hover state -->
+                            <span class="relative flex items-center justify-center gap-3">
+                                <span
+                                    class="text-lg transform transition-transform duration-300 group-hover:scale-105">أضف
+                                    للسلة</span>
+
+                                <!-- Shopping cart icon with smooth animation -->
+                                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-all duration-300 ease-in-out"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
+                                </svg>
+                            </span>
+
+                            <!-- Enhanced click effect -->
+                            <span
+                                class="absolute inset-0 rounded-lg opacity-0 group-active:opacity-100 bg-white/30 transition-all duration-300 ease-in-out"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card bg-white overflow-hidden" style="box-shadow: 0px 0px 7.89px 0px #0000000F;"
+                    data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative">
+                        <span class="badge-sale absolute top-4 right-4 z-10"> 30%-</span>
+                        <img src="assets/images/product-1.png" alt="شامبو الكيراتين"
+                            class="w-auto h-[150px] m-auto object-cover">
+                    </div>
+                    <div class="p-4 flex flex-col justify-between min-h-[268px]">
+                        <div class="star-rating text-center mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm text-[#597445] text-center mb-1">العناية بالشعر</p>
+                        <h3 class="font-Medium text-lg text-center mb-2">شامبو الكيراتين المعالج</h3>
+                        <div class="flex items-center gap-2 mb-4 justify-center">
+                            <span class="text-xl text-[#BD1C1C] font-medium">105 ر.س</span>
+                            <span class="text-[#1E251996] font-normal text-[14px] line-through">150 ر.س</span>
+                        </div>
+                        <button
+                            class="group relative whitespace-nowrap w-full bg-[#597445] hover:bg-[#4a6238] text-white font-semibold py-2 px-6 hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 ease-out overflow-hidden">
+                            <!-- Optimized animated shimmer effect -->
+                            <span
+                                class="absolute inset-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
+
+                            <!-- Button content with improved hover state -->
+                            <span class="relative flex items-center justify-center gap-3">
+                                <span
+                                    class="text-lg transform transition-transform duration-300 group-hover:scale-105">أضف
+                                    للسلة</span>
+
+                                <!-- Shopping cart icon with smooth animation -->
+                                <svg class="w-5 h-5 transform group-hover:-translate-x-1 transition-all duration-300 ease-in-out"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                    </path>
+                                </svg>
+                            </span>
+
+                            <!-- Enhanced click effect -->
+                            <span
+                                class="absolute inset-0 rounded-lg opacity-0 group-active:opacity-100 bg-white/30 transition-all duration-300 ease-in-out"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Sections Banner -->
+    <section class="py-12 md:py-16 bg-[#E7F0DC] relative overflow-hidden">
+        <!-- Decorative svg shapes -->
+        <div class="absolute top-0 left-0 pointer-events-none hidden md:block">
+            <img src="assets/images/left-bg.png" alt="decoration image"
+                class="w-auto h-[320px] lg:h-[460px] object-cover" loading="eager" decoding="async"
+                style="image-rendering: -webkit-optimize-contrast; transform: translateZ(0);" width="460"
+                height="460" />
+        </div>
+        <div class="absolute top-0 right-0 pointer-events-none hidden md:block">
+            <img src="assets/images/right-bg.png" alt="decoration image"
+                class="w-auto h-[400px] lg:h-[600px] object-cover" loading="eager" decoding="async"
+                style="image-rendering: -webkit-optimize-contrast; transform: translateZ(0);" width="232"
+                height="600" />
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div data-aos="fade-up" class="text-center my-10 md:my-16">
+                <p class="text-[#202020] text-sm md:text-base mb-2 md:mb-3">
+                    افضـــــل الاقســـــــام
+                </p>
+                <h2
+                    class="text-2xl sm:text-3xl md:text-4xl font-bold text-black w-fit mx-auto mb-3 pb-3 md:pb-4 border-[#597445] border-b-2">
+                    استكشف مجموعة متنوعة من الأقسام المتاحة
+                </h2>
+            </div>
+
+            <div
+                class="flex flex-col-reverse items-center md:grid md:grid-cols-2 lg:grid-cols-3 md:items-start gap-8 w-full">
+                <!-- Categories -->
+                <div id="categories" class="space-y-4 sm:space-y-6 order-1 text-center md:text-right"
+                    data-aos="fade-left"></div>
+
+                <!-- Product card -->
+                <div class="lg:col-span-2 order-2" data-aos="fade-right">
+                    <div class="flex flex-col">
+                        <!-- image & feature area -->
+                        <div class="relative h-80 md:h-96 lg:h-[500px]">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="relative w-full h-full max-w-md flex items-center justify-center">
+                                    <!-- product image container -->
+                                    <div id="imageWrap"
+                                        class="bg-white p-4 sm:p-6 w-full h-full flex items-center justify-center">
+                                        <img id="productImage" src="" alt="product"
+                                            class="max-w-full max-h-full object-contain" />
+                                    </div>
+
+                                    <!-- feature badges -->
+                                    <div id="featuresLayer" class="absolute inset-0"></div>
+                                </div>
+                            </div>
+
+                            <!-- nav buttons -->
+                            <button id="prevBtn" aria-label="prev" class="absolute top-1/2 right-2 sm:right-4 lg:right-40 transform -translate-y-1/2 px-3 py-3 bg-[#597445] text-white font-medium
+                border-none transition-all duration-150 ease-in
+                after:content-[''] after:flex after:items-center after:justify-center 
+                after:absolute after:top-0 after:right-0 
+                after:h-[102%] after:w-[102%]
+                after:px-3 after:py-3
+                after:translate-x-[-4px] after:translate-y-[4px]
+                after:border-2 after:border-[#597445] after:bg-transparent after:text-white
+                after:transition-all after:duration-150 after:ease-in
+                hover:after:translate-x-[0px] hover:after:translate-y-[0px]
+                active:after:bg-[#597445]/20">
+                                <span class="relative z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <button id="nextBtn" aria-label="next" class="absolute top-1/2 left-2 sm:left-4 lg:left-40 transform -translate-y-1/2 px-3 py-3 bg-[#597445] text-white font-medium
+                border-none transition-all duration-150 ease-in
+                after:content-[''] after:flex after:items-center after:justify-center 
+                after:absolute after:top-0 after:left-0 
+                after:h-[102%] after:w-[102%]
+                after:px-3 after:py-3
+                after:translate-x-[4px] after:translate-y-[4px]
+                after:border-2 after:border-[#597445] after:bg-transparent after:text-white
+                after:transition-all after:duration-150 after:ease-in
+                hover:after:translate-x-[0px] hover:after:translate-y-[0px]
+                active:after:bg-[#597445]/20">
+                                <span class="relative z-10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 19l-7-7 7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+
+                        <!-- product details -->
+                        <div class="p-6 md:p-8 text-center">
+                            <div id="productCategory" class="text-sm md:text-lg text-[#597445] mb-2">
+                                القسم
+                            </div>
+                            <h3 id="productTitle" class="text-[18px] md:text-[20px] font-[500] mb-2 text-[#1E2519]">
+                                اسم المنتج
+                            </h3>
+                            <div class="flex items-center justify-center font-[500] gap-2 mb-4 md:mb-6">
+                                <span id="productPrice" class="text-[18px] md:text-[20px] text-[#BD1C1C]">0 ر.س</span>
+                                <span id="productOldPrice"
+                                    class="text-[16px] md:text-[20px] text-[#1E251996] line-through">0 ر.س</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Instagram Gallery Banner (Swiper) -->
+    <section class="py-20">
+        <div class="container mx-auto ">
+            <div class="relative">
+                <!-- Swiper container -->
+                <div class="swiper instagram-swiper" data-aos="zoom-in">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/Allura.Cosmetics" target="_blank"
+                                rel="noopener noreferrer" class="block">
+                                <div class="relative overflow-hidden group cursor-pointer">
+                                    <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=400&fit=crop"
+                                        alt="Instagram"
+                                        class="w-full h-[244px] object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <i class="fab fa-instagram text-white text-4xl"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/Allura.Cosmetics" target="_blank"
+                                rel="noopener noreferrer" class="block">
+                                <div class="relative overflow-hidden group cursor-pointer">
+                                    <img src="assets/images/banner-4.png" alt="Instagram"
+                                        class="w-full h-[244px] object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <i class="fab fa-instagram text-white text-4xl"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/Allura.Cosmetics" target="_blank"
+                                rel="noopener noreferrer" class="block">
+                                <div class="relative overflow-hidden group cursor-pointer">
+                                    <img src="assets/images/banner-3.png" alt="Instagram"
+                                        class="w-full h-[244px] object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <i class="fab fa-instagram text-white text-4xl"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/Allura.Cosmetics" target="_blank"
+                                rel="noopener noreferrer" class="block">
+                                <div class="relative overflow-hidden group cursor-pointer">
+                                    <img src="assets/images/banner-2.png" alt="Instagram"
+                                        class="w-full h-[244px] object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <i class="fab fa-instagram text-white text-4xl"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="https://www.instagram.com/Allura.Cosmetics" target="_blank"
+                                rel="noopener noreferrer" class="block">
+                                <div class="relative overflow-hidden group cursor-pointer">
+                                    <img src="assets/images/banner-1.png" alt="Instagram"
+                                        class="w-full h-[244px] object-cover transition-transform duration-500 group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <i class="fab fa-instagram text-white text-4xl"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Overlayed Centered Title/Sub -->
+                <div class="absolute inset-0 flex items-center justify-center   z-20">
+                    <div class="backdrop-blur-sm bg-black/10 px-8 py-6 flex flex-col items-center justify-center">
+                        <a href="https://www.instagram.com/Allura.Cosmetics"
+                            class=" text-white text-2xl font-Regular mb-2 text-center">Allura.Cosmetics@</a>
+                        <h2 class=" text-white text-xl font-Regular mb-2 text-center">تابعنا على انستجرام
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combined Newsletter & Footer Section -->
+    <footer class="bg-[#F6F6F6] py-12 relative overflow-hidden">
+
+        <img src="assets/images/footer-bg-left.png" alt="bg-decoration"
+            class="absolute top-0 left-0 h-[400px] w-auto pointer-events-none" loading="eager" decoding="async"
+            width="200" height="400" />
+        <img src="assets/images/footer-bg-right.png" alt="bg-decoration"
+            class="absolute bottom-0 right-0 h-[400px] w-auto pointer-events-none" loading="eager" decoding="async"
+            width="200" height="400" />
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Newsletter Subscription -->
+            <div class="flex gap-8 flex-col md:flex-row items-center justify-between  mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-center md:text-right" style="color: var(--dark);">
+                    الاشتراك في النشرة البريدية
+                </h2>
+
+                <div class="max-w-2xl w-full flex flex-col sm:flex-row gap-3 items-center justify-center">
+                    <div class="relative flex items-center w-full">
+                        <input type="email" placeholder="أدخل بريدك الالكتروني"
+                            class="w-full px-6 py-3 rounded-[2px] bg-white placeholder:text-[#C8C8C8] focus:border-[#202020] focus:outline-none" />
+                        <div
+                            class="absolute left-4 bg-[#202020] rounded-full p-2 cursor-pointer flex items-center justify-center hover:scale-110 transition-transform">
+                            <img src="assets/images/send-icon.png" alt="send icon" class="w-[14px] h-[14px]" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex  w-full md:w-fit flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="tel:+009612345678932" aria-label="اتصل بنا 009612345678932"
+                        class="flex items-center  w-full md:w-fit gap-3 p-2 md:p-4 border border-gray-200 bg-[#9F9F9F08] shadow-sm rounded-md hover:bg-white transition-colors">
+                        <div class="w-10 h-10 rounded-full bg-[#202020] flex items-center justify-center">
+                            <img src="assets/images/mobile-icon.png" alt="اتصل" class="w-[24px] h-[24px] object-contain"
+                                loading="eager" decoding="async" />
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg text-[#202020]">اتصل بنا</div>
+                            <div class="font-regular text-[#202020E5]">009612345678932</div>
+                        </div>
+                    </a>
+
+                    <a href="mailto:Allura@gmail.com" aria-label="راسلنا Allura@gmail.com"
+                        class="flex items-center gap-3  w-full md:w-fit p-2 md:p-4 border border-gray-200 bg-[#9F9F9F08] shadow-sm rounded-md hover:bg-white transition-colors">
+                        <div class="w-10 h-10 rounded-full bg-[#202020] flex items-center justify-center">
+                            <img src="assets/images/envelope-icon.png" alt="راسلنا"
+                                class="w-[32px] h-[32px] object-contain" loading="eager" decoding="async" />
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg text-[#202020]">راسلنا</div>
+                            <div class="font-regular text-[#202020E5]">Allura@gmail.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-[#00000030]-200 mb-8">
+
+            <!-- Footer Content Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 relative">
+
+                <!-- Brand & Description -->
+                <div class="text-center lg:text-right ">
+                    <div class="flex items-center justify-center lg:justify-start gap-3 mb-6">
+                        <img src="assets/images/logo.svg" alt="Allura" width="90" height="55"
+                            class="w-full h-full max-w-[90px]" />
+                    </div>
+                    <p class="text-sm leading-relaxed mb-4" style="color: #222222E5;">
+                        متجر الورا هو وجهة مميزة لمنتجات العناية والمكياج والعطور، حيث يقدم مجموعة متنوعة من المستحضرات
+                        ذات الجودة العالية لتلبية احتياجات العملاء.
+                    </p>
+                    <p class="text-xs mb-6" style="color: #222222E5;">
+                        موثق لدى منصة<br>العملاء
+                    </p>
+
+                    <!-- Social Media Icons -->
+                    <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
+                        <a href="#"
+                            class="w-10 h-10 min-w-10 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+                            style="background-color: var(--primary);">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 min-w-10 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+                            style="background-color: var(--primary);">
+                            <i class="fab fa-snapchat-ghost"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 min-w-10 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+                            style="background-color: var(--primary);">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 min-w-10 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+                            style="background-color: var(--primary);">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 min-w-10 rounded-full flex items-center justify-center text-white transition-all hover:scale-110"
+                            style="background-color: var(--primary);">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Account Section -->
+                <div class="text-center lg:text-right lg:border-l border-gray-300 lg:pr-8">
+                    <h3 class="text-xl font-bold mb-6" style="color: var(--dark);">حسابي</h3>
+                    <ul class="space-y-3 text-lg" style="color: #222222E5;">
+                        <li><a href="#" class="hover:text-[#597445] transition-colors">حسابي</a></li>
+                        <li><a href="#" class="hover:text-[#597445] transition-colors">طلباتي</a></li>
+                        <li><a href="#" class="hover:text-[#597445] transition-colors">عربة التسوقات</a></li>
+                        <li><a href="#" class="hover:text-[#597445] transition-colors">المفضلة</a></li>
+                    </ul>
+                </div>
+
+                <!-- Important Links -->
+                <div class="text-center lg:text-right lg:border-l border-gray-300 lg:pr-8">
+                    <h3 class="text-xl font-bold mb-6" style="color: var(--dark);">روابط مهمة</h3>
+                    <ul class="space-y-3 text-lg" style="color: #222222E5;">
+                        <li><a href="#" class="hover:text-[#597445] transition-colors">من نحن</a></li>
+                        <li><a href="#" class="hover:text-[#597445] transition-colors">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="hover:text-[#597445] transition-colors">الشروط والأحكام</a></li>
+                        <li><a href="#" class="hover:text-[#597445] transition-colors">الدفع الامني</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us -->
+                <div class="text-center lg:text-right lg:border-l border-gray-300 lg:pr-8">
+                    <h3 class="text-xl font-bold mb-6" style="color: var(--dark);">تواصل معنا</h3>
+                    <ul class="space-y-4" style="color: #222222E5;">
+                        <li class="flex items-start gap-3 justify-center lg:justify-start">
+                            <!-- <i class="fas fa-phone mt-1" style="color: var(--primary);"></i> -->
+                            <img src="assets/images/phone-call.png" alt="mail-icon" class="w-[16px] h-[16px] mt-1" />
+                            <div>009612345678932</div>
+                        </li>
+                        <li class="flex items-start gap-3 justify-center lg:justify-start">
+                            <!-- <i class="fas fa-phone mt-1" style="color: var(--primary);"></i> -->
+                            <img src="assets/images/phone-call.png" alt="mail-icon" class="w-[16px] h-[16px] mt-1" />
+                            <div>009612345678932</div>
+                        </li>
+                        <li class="flex items-start gap-3 justify-center lg:justify-start">
+                            <!-- <i class="fas fa-globe mt-1" style="color: var(--primary);"></i> -->
+                            <img src="assets/images/mail-icon.png" alt="mail-icon" class="w-[16px] h-[16px] mt-1" />
+                            <a href="https://salla.sa" target="_blank"
+                                class="hover:text-[#597445] transition-colors">https://salla.sa</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Image Column -->
+                <div class="flex flex-col gap-2 justify-center items-center lg:border-l border-gray-300 lg:pr-8">
+                    <img src="assets/images/sbc.png" alt="Footer decorative image" class="w-40 h-auto  " />
+                    <p class="text-[24px] text-center">موثق لدى منصة <br> العملاء</p>
+                </div>
+            </div>
+
+
+            <hr class="border-[#00000030]-200 mb-8">
+
+            <!-- Bottom Section -->
+            <div class="flex flex-col md:flex-row-reverse justify-between items-center gap-6 text-sm text-[#202020]">
+
+                <!-- Payment Methods -->
+                <div class="flex items-center gap-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png" alt="PayPal"
+                        class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"
+                        class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"
+                        class="h-6">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay"
+                        class="h-6">
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-center">
+                    جميع الحقوق محفوظة لدى جليتر
+                </div>
+
+                <!-- ID Number -->
+                <div class="flex items-center gap-2">
+                    <img src="assets/images/tax-number.png" alt="Tax number" class="h-[30px] w-auto">
+                    <span>الرقم الضريبي : 546987552</span>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop"
+        class="fixed bottom-8 left-8 w-12 h-12 rounded-full shadow-lg items-center justify-center hidden z-50 transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl opacity-0"
+        style="background: var(--primary); backdrop-filter: blur(4px);">
+        <i
+            class="fas fa-arrow-up text-white transform transition-transform duration-300 group-hover:translate-y-[-2px]"></i>
+    </button>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+    <script>
+        // Instagram Swiper init
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                const instagramSwiper = new Swiper('.instagram-swiper', {
+                    loop: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.instagram-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.instagram-swiper .swiper-button-next',
+                        prevEl: '.instagram-swiper .swiper-button-prev',
+                    },
+                    breakpoints: {
+                        // when window width is >= 640px
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        // when window width is >= 1024px
+                        1024: {
+                            slidesPerView: 4,
+                        }
+                    }
+                });
+            } catch (e) {
+                console.warn('Swiper init failed:', e);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
