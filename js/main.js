@@ -307,3 +307,36 @@ if (loader && progressBar && percentage) {
 
 // Prevent scrolling while loading
 document.body.style.overflow = "hidden";
+
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("hidden");
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebarOverlay");
+  sidebar.classList.toggle("active");
+  overlay.classList.toggle("active");
+}
+
+// Close sidebar when clicking on overlay
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById("sidebarOverlay");
+
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) {
+      toggleSidebar();
+    }
+  });
+
+  // Close sidebar on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const sidebar = document.getElementById("sidebar");
+      if (sidebar.classList.contains("active")) {
+        toggleSidebar();
+      }
+    }
+  });
+});

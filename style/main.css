@@ -669,3 +669,59 @@
  .leading-relaxed {
      line-height: 1.6 !important;
  }
+
+ /* Sidebar overlay */
+ .sidebar-overlay {
+     position: fixed;
+     inset: 0;
+     background: rgba(0, 0, 0, 0.5);
+     z-index: 40;
+     opacity: 0;
+     visibility: hidden;
+     transition: opacity 0.3s ease, visibility 0.3s ease;
+ }
+
+ .sidebar-overlay.active {
+     opacity: 1;
+     visibility: visible;
+ }
+
+ /* Sidebar */
+ .sidebar {
+     position: fixed;
+     top: 0;
+     right: -100%;
+     width: 280px;
+     height: 100vh;
+     background: white;
+     z-index: 50;
+     transition: right 0.3s ease;
+     overflow-y: auto;
+     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .sidebar.active {
+     right: 0;
+ }
+
+ /* Smooth transitions */
+ * {
+     transition: color 0.2s ease;
+ }
+
+ .mobile-left-decoration {
+     filter: contrast(0.8) brightness(1.05);
+ }
+
+ /* Mobile decorative image positioning */
+ @media (max-width: 1023px) {
+     .mobile-decoration {
+         position: absolute;
+         top: 40%;
+         right: -40px;
+         width: 120px;
+         height: auto;
+         z-index: 20;
+         transform: rotate(90deg);
+     }
+ }
