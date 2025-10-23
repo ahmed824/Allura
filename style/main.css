@@ -98,16 +98,16 @@
  }
 
  .brand-img {
-     filter: grayscale(0%);
-
+      width: auto !important;
+     object-fit: contain !important;   
+     max-width: 190px !important;
      transition: all 0.3s ease;
- }
-
-
- .brand-img:hover {
-     filter: grayscale(0%);
      opacity: 1;
+
  }
+
+
+ 
 
  .hero-gradient {
      background: linear-gradient(135deg, var(--secondary) 0%, rgba(231, 240, 220, 0.5) 100%);
