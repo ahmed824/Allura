@@ -93,14 +93,21 @@ let currentIndex = 0;
 
 // helper to map position -> tailwind classes (absolute)
 function getFeaturePosition(position) {
+  const isSmallScreen = window.innerWidth < 768; // Tailwind breakpoint: md
+
   const positions = {
-    "top-left": "top-40 -right-28", // rtl => right aligned
-    "top-right": "top-8 -left-28",
-    "middle-left": "top-1/2 -translate-y-1/2 -right-28",
-    "middle-right": "top-1/2 -translate-y-1/2 -left-28",
-    "bottom-left": "bottom-8 -right-28",
-    "bottom-right": "bottom-24 -left-28",
+    "top-left": isSmallScreen ? "top-24 -right-12" : "top-40 -right-28",
+    "top-right": isSmallScreen ? "top-8 -left-12" : "top-8 -left-28",
+    "middle-left": isSmallScreen
+      ? "top-1/2 -translate-y-1/2 -right-12"
+      : "top-1/2 -translate-y-1/2 -right-28",
+    "middle-right": isSmallScreen
+      ? "top-1/2 -translate-y-1/2 -left-12"
+      : "top-1/2 -translate-y-1/2 -left-28",
+    "bottom-left": isSmallScreen ? "bottom-8 -right-12" : "bottom-8 -right-28",
+    "bottom-right": isSmallScreen ? "bottom-20 -left-12" : "bottom-24 -left-28",
   };
+
   return positions[position] || "top-8 right-0";
 }
 
@@ -109,7 +116,7 @@ function renderCategories() {
   categoriesWrap.innerHTML = "";
   categories.forEach((cat, idx) => {
     const div = document.createElement("div");
-    div.className = `cursor-pointer text-[32px] transition-all duration-300 hover:scale-105 w-fit text-[#202020]  ml-auto ${
+    div.className = `cursor-pointer text-[32px] transition-all duration-300 hover:scale-105 w-fit text-[#202020] m-auto  md:ml-auto ${
       currentIndex === idx ? "cat-active opacity-100" : "opacity-50"
     }`;
     div.innerHTML = `<div class="pb-3"><span class=" font-bold text-right block transition-all duration-300">${cat}</span></div>`;
